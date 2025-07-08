@@ -1,0 +1,185 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Extrovert vs. Introvert Behavior Data | Kaggle</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="Explore and Predict Social Behaviors and Personality Types" />
+    <meta name="keywords" content="health conditions,classification,exploratory data analysis,psychology,feature engineering,ensembling" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==" type="text/javascript">
+    window["pageRequestStartTime"] = 1749437940295;
+    window["pageRequestEndTime"] = 1749437940450;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <script nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==" id="gsi-client" src="https://accounts.google.com/gsi/client" async defer></script>
+  <script nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==">window.KAGGLE_JUPYTERLAB_PATH = "/static/assets/jupyterlab-v4/jupyterlab-index-f60898aca83ab9b23425.html";</script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+    <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" id="dynamic-favicon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+
+    <link rel="canonical" href="https://www.kaggle.com/datasets/rakeshkapilavai/extrovert-vs-introvert-behavior-data" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=2d4e7ec4eb689d926191" />
+
+  
+    
+ 
+      <script nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-T7QHS60L4Q', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Datasets'
+        });
+    </script>
+    <script nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==" async src="https://www.googletagmanager.com/gtag/js?id=G-T7QHS60L4Q"></script>
+
+  
+    
+    <meta property="og:url" content="https://www.kaggle.com/datasets/rakeshkapilavai/extrovert-vs-introvert-behavior-data" />
+    <meta property="og:title" content="Extrovert vs. Introvert Behavior Data" />
+    <meta property="og:description" content="Explore and Predict Social Behaviors and Personality Types" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/kaggle-datasets-images/7474089/11891195/86b36eff73f2ad6be5fe220dfe7d3256/dataset-card.png?t=2025-05-21-04-43-56" />
+    <meta property="fb:app_id" content="2665027677054710" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+            <script nonce="nAwc7M5eudNi/cxFkM+9ng==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"Extrovert vs. Introvert Behavior Data","description":"**Overview**\n\n*Dive into the Extrovert vs. Introvert Personality Traits Dataset, a rich collection of behavioral and social data designed to explore the spectrum of human personality. This dataset captures key indicators of extroversion and introversion, making it a valuable resource for psychologists, data scientists, and researchers studying social behavior, personality prediction, or data preprocessing techniques.*\n\n**Context**\n\n*Personality traits like extroversion and introversion shape how individuals interact with their social environments. This dataset provides insights into behaviors such as time spent alone, social event attendance, and social media engagement, enabling applications in psychology, sociology, marketing, and machine learning. Whether you're predicting personality types or analyzing social patterns, this dataset is your gateway to uncovering fascinating insights.*\n\n**Dataset Details**\n\n **Size**: The dataset contains 2,900 rows and 8 columns. \n \n**Features**:\n\n        - Time_spent_Alone: Hours spent alone daily (0–11).\n        - Stage_fear: Presence of stage fright (Yes/No).\n        - Social_event_attendance: Frequency of social events (0–10).\n        - Going_outside: Frequency of going outside (0–7).\n        - Drained_after_socializing: Feeling drained after socializing (Yes/No).\n        - Friends_circle_size: Number of close friends (0–15).\n        - Post_frequency: Social media post frequency (0–10).\n        - Personality: Target variable (Extrovert/Introvert).*\n\n **Data Quality**: Includes some missing values, ideal for practicing imputation and preprocessing.\n **Format**: Single CSV file, compatible with Python, R, and other tools.*\n\n\n**Data Quality Notes**\n\n- Contains missing values in columns like Time_spent_Alone and Going_outside, offering opportunities for data cleaning practice.\n- Balanced classes ensure robust model training.\n- Binary categorical variables simplify encoding tasks.\n\n\n**Potential Use Cases**\n\n- Build machine learning models to predict personality types.\n- Analyze correlations between social behaviors and personality traits.\n- Explore social media engagement patterns.\n- Practice data preprocessing techniques like imputation and encoding.\n- Create visualizations to uncover behavioral trends.\n\n**Please Upvote if you like the dataset ☺️**","url":"https://www.kaggle.com/rakeshkapilavai/extrovert-vs-introvert-behavior-data","version":1,"keywords":["subject, health and fitness, health, health conditions","task, classification","technique, exploratory data analysis","subject, people and society, social science, psychology","technique, feature engineering","technique, ensembling"],"license":{"@type":"CreativeWork","name":"CC BY-SA 4.0","url":"https://creativecommons.org/licenses/by-sa/4.0/"},"identifier":["7474089"],"includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"Rakesh Kapilavayi","url":"https://www.kaggle.com/rakeshkapilavai","image":"https://storage.googleapis.com/kaggle-avatars/thumbnails/26829034-kg.jpg?t=2025-05-22-05-10-39"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com/datasets/rakeshkapilavai/extrovert-vs-introvert-behavior-data/download?datasetVersionNumber=1","contentSize":"15392 bytes"}],"commentCount":5,"dateModified":"2025-05-21T04:26:52.443Z","discussionUrl":"https://www.kaggle.com/rakeshkapilavai/extrovert-vs-introvert-behavior-data/discussion","alternateName":"Explore and Predict Social Behaviors and Personality Types","isAccessibleForFree":true,"thumbnailUrl":"https://storage.googleapis.com/kaggle-datasets-images/7474089/11891195/86b36eff73f2ad6be5fe220dfe7d3256/dataset-card.png?t=2025-05-21-04-43-56","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":5},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":10902},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":41472},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":260}]}</script>
+        
+
+  
+    
+
+  
+    
+
+
+    <script nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="nAwc7M5eudNi/cxFkM+9ng==" src="/static/assets/runtime.js?v=270b26da5be7b1d98327"></script>
+  <script nonce="nAwc7M5eudNi/cxFkM+9ng==" src="/static/assets/vendor.js?v=42b0e7abe0d4aafb8397"></script>
+  <script nonce="nAwc7M5eudNi/cxFkM+9ng==" src="/static/assets/app.js?v=0f4c11ea7b80d653236b"></script>
+    <script nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '27291911'
+      }
+    </script>
+</head>
+<body>
+  <div id="root">
+    
+
+
+
+
+
+
+
+
+<script nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    jax: ['input/TeX', 'output/SVG'],
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: ["Safe.js"],
+    });
+</script>
+<script type="text/javascript" nonce="nAwc7M5eudNi/cxFkM&#x2B;9ng==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    // Always use the production asset in local dev, which is served from GCS. We tried to proxy and / or serve this
+    // in a better way in localhost, but it didn't work out. See b/328073416#comment8 for details.
+    const forceProdHost = window.location.hostname === "localhost";
+    lib.src = `${forceProdHost ? "https://www.kaggle.com" : ""}/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS_SVG`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+
+
+
+
+
+
+    <!-- Cheers, web-6f65cbc5c8-9tm7fp. -->
+
+  </div>
+</body>
+</html>
